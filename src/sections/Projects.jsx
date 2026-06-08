@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion'
 import { ArrowUpRight, ExternalLink } from 'lucide-react'
 
@@ -5,10 +6,11 @@ const projects = [
   {
     num: '01',
     title: 'FitCore Gym Website',
-    category: 'Web Development',
-    desc: 'Luxury cinematic gym website with modern UI, bold typography, and fully responsive design. High-energy layouts that motivate and convert.',
+    category: 'Premium Fitness Website',
+    desc: 'Premium cinematic gym website built with React and Tailwind CSS featuring smooth animations, responsive layouts, pricing plans, trainer showcases, and modern fitness branding.',
     tags: ['React', 'Tailwind', 'Framer Motion'],
-    color: '#00F2A1',
+    color: '#7DA0CA',
+    link: 'https://fitcore-gym-plum.vercel.app',
   },
   {
     num: '02',
@@ -16,7 +18,8 @@ const projects = [
     category: 'UI Design + Dev',
     desc: 'Elegant restaurant website with warm glassmorphism cards, rich imagery sections, and smooth scroll-based menu reveal animations.',
     tags: ['Next.js', 'CSS', 'Animations'],
-    color: '#00c8ff',
+    color: '#5483B3',
+    link: '#',
   },
   {
     num: '03',
@@ -24,14 +27,15 @@ const projects = [
     category: 'Landing Page',
     desc: 'Conversion-focused startup landing page with bold CTAs, luxury UI systems, feature grids, and trust-building social proof sections.',
     tags: ['React', 'Tailwind', 'Vercel'],
-    color: '#a78bfa',
+    color: '#C1E8FF',
+    link: '#',
   },
 ]
 
 export default function Projects() {
   return (
     <section id="projects" className="relative py-28 md:py-36 overflow-hidden">
-      <div className="absolute right-0 bottom-1/4 w-80 h-80 rounded-full bg-[#00F2A1]/3 blur-[120px] pointer-events-none" />
+      <div className="absolute right-0 bottom-1/4 w-80 h-80 rounded-full bg-[#7DA0CA]/10 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
@@ -43,7 +47,10 @@ export default function Projects() {
               viewport={{ once: true }}
               className="divider mb-4"
               style={{ justifyContent: 'flex-start' }}
-            ><span>Portfolio</span></motion.div>
+            >
+              <span>Portfolio</span>
+            </motion.div>
+
             <motion.h2
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +59,10 @@ export default function Projects() {
               className="font-serif text-4xl md:text-5xl font-bold tracking-tight leading-tight"
               style={{ fontFamily: '"DM Serif Display", serif' }}
             >
-              Selected <span className="italic" style={{ color: '#00F2A1' }}>Work</span>
+              Selected{' '}
+              <span className="italic" style={{ color: '#7DA0CA' }}>
+                Work
+              </span>
             </motion.h2>
           </div>
 
@@ -61,54 +71,76 @@ export default function Projects() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             href="https://github.com/newcoder-god"
-            target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-2 font-dm text-sm text-white/30 hover:text-[#00F2A1] transition-colors duration-300 mb-1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 font-dm text-sm text-white/40 hover:text-[#7DA0CA] transition-colors duration-300 mb-1"
           >
             All on GitHub <ExternalLink size={12} />
           </motion.a>
         </div>
 
-        {/* Project list */}
+        {/* Projects */}
         <div className="space-y-5">
           {projects.map((p, i) => (
-            <motion.div
+            <motion.a
               key={p.num}
+              href={p.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: .65, delay: i * .1 }}
-              className="group relative rounded-2xl border border-white/7 bg-[#0f1320]/40 hover:border-white/12 transition-all duration-500 overflow-hidden cursor-pointer"
+              className="group relative rounded-2xl border border-white/7 bg-[#0f1320]/40 hover:border-white/12 transition-all duration-500 overflow-hidden cursor-pointer block"
             >
-              {/* Hover accent line */}
-              <div className="absolute left-0 top-0 bottom-0 w-0.5 group-hover:bg-[#00F2A1] transition-colors duration-500"
-                style={{ background: 'transparent' }} />
-              <div className="absolute left-0 top-0 bottom-0 w-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ background: p.color }} />
+              {/* Accent line */}
+              <div
+                className="absolute left-0 top-0 bottom-0 w-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: p.color }}
+              />
 
               <div className="p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+
                 {/* Number */}
-                <div className="font-serif font-bold text-5xl shrink-0 w-16 leading-none opacity-[.07] select-none"
-                  style={{ fontFamily: '"DM Serif Display", serif', color: p.color }}>
+                <div
+                  className="font-serif font-bold text-5xl shrink-0 w-16 leading-none opacity-[.07] select-none"
+                  style={{
+                    fontFamily: '"DM Serif Display", serif',
+                    color: p.color
+                  }}
+                >
                   {p.num}
                 </div>
 
-                {/* Info */}
+                {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <h3 className="font-dm font-semibold text-white text-[17px] group-hover:text-[#00F2A1] transition-colors duration-300">
+
+                    <h3 className="font-dm font-semibold text-white text-[17px] group-hover:text-[#7DA0CA] transition-colors duration-300">
                       {p.title}
                     </h3>
+
                     <span className="font-dm text-[10px] text-white/25 tracking-widest uppercase px-2.5 py-0.5 rounded-full border border-white/8">
                       {p.category}
                     </span>
+
                   </div>
-                  <p className="font-dm text-[rgba(232,232,232,0.38)] text-[13px] leading-relaxed mb-4 max-w-xl">
+
+                  <p className="font-dm text-[rgba(232,232,232,0.45)] text-[13px] leading-relaxed mb-4 max-w-xl">
                     {p.desc}
                   </p>
+
                   <div className="flex flex-wrap gap-2">
                     {p.tags.map(tag => (
-                      <span key={tag} className="font-dm text-[11px] px-3 py-1 rounded-full"
-                        style={{ background: `${p.color}0f`, border: `1px solid ${p.color}22`, color: p.color }}>
+                      <span
+                        key={tag}
+                        className="font-dm text-[11px] px-3 py-1 rounded-full"
+                        style={{
+                          background: `${p.color}12`,
+                          border: `1px solid ${p.color}22`,
+                          color: p.color
+                        }}
+                      >
                         {tag}
                       </span>
                     ))}
@@ -116,14 +148,18 @@ export default function Projects() {
                 </div>
 
                 {/* Arrow */}
-                <div className="hidden sm:flex w-11 h-11 rounded-full border border-white/8 items-center justify-center shrink-0 group-hover:border-[#00F2A1]/30 group-hover:bg-[#00F2A1]/8 transition-all duration-300">
-                  <ArrowUpRight size={16} className="text-white/20 group-hover:text-[#00F2A1] transition-colors duration-300" />
+                <div className="hidden sm:flex w-11 h-11 rounded-full border border-white/8 items-center justify-center shrink-0 group-hover:border-[#7DA0CA]/30 group-hover:bg-[#7DA0CA]/10 transition-all duration-300">
+                  <ArrowUpRight
+                    size={16}
+                    className="text-white/20 group-hover:text-[#7DA0CA] transition-colors duration-300"
+                  />
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
     </section>
   )
 }
+
