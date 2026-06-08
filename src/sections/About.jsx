@@ -39,7 +39,7 @@ export default function About() {
             </div>
 
             <div className="absolute -bottom-5 -left-4 bg-[#11151f] border border-white/10 rounded-2xl px-6 py-4">
-              <div className="font-serif font-bold text-4xl" style={{ color: '#00F2A1', fontFamily: '"DM Serif Display", serif' }}>2+</div>
+              <div className="font-serif font-bold text-4xl" style={{ color: '#00F2A1', fontFamily: '"DM Serif Display", serif' }}>1+</div>
               <div className="font-dm text-[11px] text-white/35 mt-0.5">Years Experience</div>
             </div>
           </div>

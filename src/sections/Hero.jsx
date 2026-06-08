@@ -135,7 +135,7 @@ export default function Hero() {
             transition={{ delay: 1.1 }}
             className="absolute bottom-24 left-12 z-20 bg-[#0b0f18]/90 backdrop-blur-lg border border-white/10 rounded-2xl px-5 py-4"
           >
-            <div className="font-serif font-bold text-3xl" style={{ color: '#00F2A1', fontFamily: '"DM Serif Display", serif' }}>10+</div>
+            <div className="font-serif font-bold text-3xl" style={{ color: '#00F2A1', fontFamily: '"DM Serif Display", serif' }}>3</div>
             <div className="font-dm text-[11px] text-white/40 mt-0.5">Projects Completed</div>
           </motion.div>
 
